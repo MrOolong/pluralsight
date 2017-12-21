@@ -21,15 +21,14 @@ namespace StaticMethodDemo
                     case "C":
                     case "c":
                         Console.WriteLine("Please enter the Celsius temperature: ");
-                        TemperatureConverter converter = new TemperatureConverter();
-                        fahrenheit = converter.CelsiusToFahrenheit(Console.ReadLine());
+                        fahrenheit = TemperatureConverter.CelsiusToFahrenheit(Console.ReadLine());
                         Console.WriteLine($"Temperature in Fahrenheit: {fahrenheit:f2}");
                         break;
                     case "F":
                     case "f":
                         Console.WriteLine("Please enter the Fahrenheit temperature: ");
-                        converter = new TemperatureConverter();
-                        celsius = converter.FahrenheitToCelsius(Console.ReadLine());
+                        // no longer creating an instance - instead calling method on the class via static method
+                        celsius = TemperatureConverter.FahrenheitToCelsius(Console.ReadLine());
                         Console.WriteLine($"Temperature in Celsius: {celsius:f2}");
                         break;
 
